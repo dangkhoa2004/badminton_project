@@ -1,0 +1,9 @@
+{
+  "scripts": {
+    "install-all": "npm install --prefix badminton-fe && npm install --prefix badminton-be",
+    "dev": "concurrently \"npm run dev --prefix badminton-fe\" \"node badminton-be/server.js\""
+  },
+  "devDependencies": {
+    "concurrently": "^9.2.1"
+  }
+}
