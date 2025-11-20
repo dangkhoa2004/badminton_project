@@ -1,26 +1,52 @@
+import { FaShoppingBag, FaSearch } from "react-icons/fa";
+
 const Header = () => {
+  // Giả lập số lượng sản phẩm trong giỏ hàng
+  const cartItemCount = 3; 
+
   return (
     <header>
-      <div className="header-top">
-        <div className="container">
-          Hotline: 0909.123.456 | Miễn phí vận chuyển đơn hàng từ 500k
-        </div>
-      </div>
-      <div className="header-main">
-        <div className="container nav-container">
-          <div className="logo">BADMINTON SHOP</div>
-          <nav>
-            <ul className="nav-links">
-              <li><a href="#">TRANG CHỦ</a></li>
-              <li><a href="#">VỢT CẦU LÔNG</a></li>
-              <li><a href="#">GIÀY</a></li>
-              <li><a href="#">QUẦN ÁO</a></li>
-              <li><a href="#">PHỤ KIỆN</a></li>
-            </ul>
-          </nav>
-          <div>
-            <button className="btn-primary" style={{padding: '8px 15px', fontSize: '0.9rem'}}>Giỏ hàng (0)</button>
-          </div>
+      <div className="container nav-wrapper">
+        {/* Logo */}
+        <a href="#" className="logo">BAD<span>MINTON</span></a>
+
+        {/* Menu */}
+        <nav>
+          <ul className="nav-links">
+            <li><a href="#">Shop</a></li>
+            <li><a href="#">Vợt cầu lông</a></li>
+            <li><a href="#">Giày</a></li>
+            <li><a href="#">Thương hiệu</a></li>
+          </ul>
+        </nav>
+
+        {/* Actions */}
+        <div className="header-actions">
+           <button className="icon-btn">
+              <FaSearch size={20} />
+           </button>
+           <button className="icon-btn" style={{position: 'relative'}}>
+              <FaShoppingBag size={20} />
+              {cartItemCount > 0 && (
+                <span style={{
+                  position: 'absolute',
+                  top: '-5px',
+                  right: '-5px',
+                  backgroundColor: '#000', // Đen
+                  color: 'white',
+                  borderRadius: '50%',
+                  width: '20px',
+                  height: '20px',
+                  fontSize: '0.75rem',
+                  display: 'flex',
+                  alignItems: 'center',
+                  justifyContent: 'center',
+                  fontWeight: 'bold'
+                }}>
+                  {cartItemCount}
+                </span>
+              )}
+           </button>
         </div>
       </div>
     </header>
