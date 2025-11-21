@@ -133,15 +133,15 @@ Dự án được thực hiện bởi **[Cao Đăng Khoa]**. Mọi ý kiến đ�
 
 <div align="center">
 
-<a href="https://github.com/username-cua-ban">
+<a href="https://github.com/dangkhoa2004">
   <img src="https://img.shields.io/badge/GITHUB-Profile-181717?style=for-the-badge&logo=github&logoColor=white" alt="Github">
 </a>
 &nbsp;
-<a href="https://facebook.com/link-cua-ban">
+<a href="https://www.facebook.com/dangkh0a2004">
   <img src="https://img.shields.io/badge/FACEBOOK-Connect-181717?style=for-the-badge&logo=facebook&logoColor=white" alt="Facebook">
 </a>
 &nbsp;
-<a href="mailto:email-cua-ban@gmail.com">
+<a href="mailto:blindforme2004@gmail.com">
   <img src="https://img.shields.io/badge/EMAIL-Contact_Me-181717?style=for-the-badge&logo=gmail&logoColor=white" alt="Email">
 </a>
 
