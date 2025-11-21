@@ -1,5 +1,8 @@
+import { useEffect, useState } from "react";
 import { FaCartPlus } from "react-icons/fa";
+import api from "../../api/index";
 
+// --- 1. Định nghĩa Interface chung ---
 interface Product {
   id: number;
   name: string;
@@ -10,6 +13,8 @@ interface Product {
   weight?: string;
 }
 
+// --- 2. Component con: ProductCard ---
+// (Trước đây là file ProductCard.tsx riêng biệt)
 const ProductCard = ({ product }: { product: Product }) => {
   return (
     <div className="card">
@@ -38,4 +43,31 @@ const ProductCard = ({ product }: { product: Product }) => {
   );
 };
 
-export default ProductCard;
+// --- 3. Component chính: ProductList ---
+const ProductList = () => {
+  const [products, setProducts] = useState<Product[]>([]);
+
+  useEffect(() => {
+    api
+      .get("/products")
+      .then((res) => setProducts(res.data))
+      .catch((err) => console.error("Lỗi tải danh sách sản phẩm:", err));
+  }, []);
+
+  return (
+    <div className="container" style={{ marginTop: "40px" }}>
+      <div className="section-header">
+        <h2 className="section-title">KHÁM PHÁ BỘ SƯU TẬP</h2>
+        <p className="section-subtitle">Những sản phẩm được yêu thích nhất</p>
+      </div>
+
+      <div className="grid-layout">
+        {products.map((product) => (
+          <ProductCard key={product.id} product={product} />
+        ))}
+      </div>
+    </div>
+  );
+};
+
+export default ProductList;
